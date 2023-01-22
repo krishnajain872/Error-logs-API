@@ -6,7 +6,7 @@ const ErrorModel = require("../models/Error-Model");
 
 // Error-logs Get
 
-router.get("/Error", async (req, res) => {
+router.get("/error", async (req, res) => {
   try {
     const Error = await ErrorModel.find()
     res.status(202).send(Error);
@@ -19,9 +19,9 @@ router.get("/Error", async (req, res) => {
 });
 
 
-router.post("/Error", async (req, res) => {
+router.post("/error", async (req, res) => {
   try {
-    const Error = new ErrorModel(req.body);
+    const Error = new ErrorModel({ error: req.body.error });
     console.log(Error);
     const ErrorSave = await Error.save();
     //  ErrorSave.
