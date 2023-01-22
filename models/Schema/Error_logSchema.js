@@ -3,7 +3,10 @@ const Error_Schema = mongoose.Schema(
 
 	{
 
-		error: { type: String }
+		error: {
+			type: String,
+			required: true
+		}
 
 	}
 	, { timestamps: true })
